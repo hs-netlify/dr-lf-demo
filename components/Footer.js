@@ -4,8 +4,8 @@ export default function Footer() {
       <footer>
         <section className="testimonial">
           <h2>
-            "Having the convenience of Life Fitness as a home gym is
-            unprecedented."
+            Having the convenience of Life Fitness as a home gym is
+            unprecedented.
           </h2>
           <p>Jillian Turner</p>
         </section>
