@@ -121,6 +121,14 @@ input {
 .main-nav-item a:hover {
   color: #d96528;
 }
+
+.all-prods ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+}
+
 .cart-size {
   position: absolute;
   top: -18px;
@@ -143,13 +151,13 @@ input {
 .testimonial {
   width: 100%;
   height: 280px;
-  background: url(/testimonial-bg.jpeg) 50% no-repeat;
+  background: url(/testimonial-bg-two.jpg) 50% no-repeat;
   background-size: cover;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  color: #fff;
+  color: #000;
 }
 .testimonial h2 {
   padding: 0 30px;
