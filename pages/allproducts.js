@@ -8,9 +8,7 @@ export default function AllProductsPage({ products }) {
     <>
       <header className="app-header">
         <h1>
-          <Link href="/">
-            <a>Life Fitness Shop</a>
-          </Link>
+          <Link href="/">Life Fitness Shop</Link>
         </h1>
         <h3>
           <a>All Products</a>
@@ -18,8 +16,8 @@ export default function AllProductsPage({ products }) {
         <nav className="all-prods">
           <ul>
             <li className="main-nav-item">
-              <Link href="/cart">
-                <a className="cart cartLink">Shopping Cart</a>
+              <Link className="cart cartLink" href="/cart">
+                Shopping Cart
               </Link>
             </li>
           </ul>

@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import { formatPrice } from "../utilityFunctions";
-import { useAppContext } from "../state";
+import { useEffect, useState } from 'react';
+import { formatPrice } from '../utilityFunctions';
+import { useAppContext } from '../state';
 
 function getCurrentVariantObject(vars, id) {
   return vars.filter((v) => {
@@ -53,7 +53,7 @@ export default function ProductPageContent({ product }) {
   // Quantity of the chosen variant
   const [quantity, setQuantity] = useState(1);
   // Cost of the chosen variant
-  const [cost, setCost] = useState("");
+  const [cost, setCost] = useState('');
 
   const { cartId, setCartId } = useAppContext();
 
@@ -67,18 +67,18 @@ export default function ProductPageContent({ product }) {
   let image = product.images.edges[0].node;
 
   let handleAddToCart = async () => {
-    console.log("--- Adding to cart ---");
+    console.log('--- Adding to cart ---');
 
     const body = {
-      cartId: cartId || "",
+      cartId: cartId || '',
       itemId: chosenVariant,
       quantity: quantity,
     };
 
-    const cartResponse = await fetch("/.netlify/functions/add-to-cart", {
-      method: "post",
+    const cartResponse = await fetch('/.netlify/functions/add-to-cart', {
+      method: 'post',
       body: JSON.stringify(body),
-      headers: { "Content-Type": "application/json" },
+      headers: { 'Content-Type': 'application/json' },
     });
 
     const data = await cartResponse.json();

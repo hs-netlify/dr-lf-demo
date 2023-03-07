@@ -4,21 +4,19 @@ export default function Header() {
   return (
     <header className="app-header">
       <h1>
-        <Link href="/">
-          <a>Life Fitness Shop</a>
-        </Link>
+        <Link href="/">Life Fitness Shop</Link>
       </h1>
       <nav className="main-nav">
         <ul>
           <li className="main-nav-item">
             <Link href="/allproducts">
               {/* This link could be built out as an All Products page */}
-              <a>All Products</a>
+              All Products
             </Link>
           </li>
           <li className="main-nav-item">
-            <Link href="/cart">
-              <a className="cart cartLink">Shopping Cart</a>
+            <Link className="cart cartLink" href="/cart">
+              Shopping Cart
             </Link>
           </li>
         </ul>
