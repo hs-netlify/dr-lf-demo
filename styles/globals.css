@@ -20,7 +20,10 @@ body {
   border: 10px solid #ccc;
   min-height: 100vh;
   line-height: 1.4;
+  font-family: sans-serif;
+  padding: 1em; 
 }
+.SearchBox { margin: 1em 0; }
 h1,
 h2,
 h3 {
@@ -380,3 +383,4 @@ main {
   margin: 0.5rem 0;
   font-weight: 700;
 }
+

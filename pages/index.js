@@ -1,17 +1,24 @@
 import Head from 'next/head';
-import ProductListing from '@components/ProductListing';
+import { useState } from 'react';
+// import ProductListing from '@components/ProductListing';
+import HitListing from '../components/HitListing';
 import Header from '@components/Header';
 import Footer from '@components/Footer';
 import { getProductList } from '@api/getProductList';
-import {
-  InstantSearch,
-  SearchBox,
-  Hits,
-  Highlight,
-} from 'react-instantsearch-dom';
-import searchClient from 'algoliasearch';
+import searchClient from '../algolia';
+import { InstantSearch, SearchBox, Hits } from 'react-instantsearch-hooks-web';
 
-export default function Home({ products }) {
+function Hit({ hit }) {
+  return <HitListing hit={hit} />;
+}
+
+function Home({ products }) {
+  const [searchState, setSearchState] = useState({});
+
+  const handleSearchStateChange = (newSearchState) => {
+    setSearchState(newSearchState);
+  };
+
   return (
     <>
       <Head>
@@ -20,20 +27,16 @@ export default function Home({ products }) {
       </Head>
 
       <Header />
-      <InstantSearch
-        searchClient={searchClient}
-        indexName={process.env.ALGOLIA_SEARCH_INDEX}
-      >
-        <SearchBox />
-        <Hits hitComponent={ProductListing} />
-      </InstantSearch>
-
       <main>
-        <ul className="product-grid">
-          {products.map((p, index) => {
-            return <ProductListing key={`product${index}`} product={p.node} />;
-          })}
-        </ul>
+        <InstantSearch
+          indexName={process.env.ALGOLIA_SEARCH_INDEX}
+          searchClient={searchClient}
+          searchState={searchState}
+          onSearchStateChange={handleSearchStateChange}
+        >
+          <SearchBox />
+          <Hits hitComponent={Hit} />
+        </InstantSearch>
       </main>
 
       <Footer />
@@ -50,3 +53,5 @@ export async function getStaticProps() {
     },
   };
 }
+
+export default Home;
