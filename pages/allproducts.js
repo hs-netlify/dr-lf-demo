@@ -1,7 +1,7 @@
-import ProductListing from '@components/ProductListing';
-import Link from 'next/link';
-import Footer from '@components/Footer';
-import { getProductList } from '@api/getProductList';
+import ProductListing from "@components/ProductListing";
+import Link from "next/link";
+import Footer from "@components/Footer";
+import { getProductList } from "netlify/functions/utils/getProductList";
 
 export default function AllProductsPage({ products }) {
   return (

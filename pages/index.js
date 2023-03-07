@@ -1,12 +1,12 @@
-import Head from 'next/head';
-import { useState } from 'react';
+import Head from "next/head";
+import { useState } from "react";
 // import ProductListing from '@components/ProductListing';
-import HitListing from '../components/HitListing';
-import Header from '@components/Header';
-import Footer from '@components/Footer';
-import { getProductList } from '@api/getProductList';
-import searchClient from '../algolia';
-import { InstantSearch, SearchBox, Hits } from 'react-instantsearch-hooks-web';
+import HitListing from "../components/HitListing";
+import Header from "@components/Header";
+import Footer from "@components/Footer";
+import { getProductList } from "netlify/functions/utils/getProductList";
+import searchClient from "../algolia";
+import { InstantSearch, SearchBox, Hits } from "react-instantsearch-hooks-web";
 
 function Hit({ hit }) {
   return <HitListing hit={hit} />;

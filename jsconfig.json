@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@api/*": ["api/functions/utils/*"],
+      "@api/*": ["netlify/functions/utils/*"],
       "@components/*": ["components/*"],
       "@styles/*": ["styles/*"]
     }
